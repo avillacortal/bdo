@@ -26,6 +26,11 @@ public class DemoController {
 	    @ApiResponse(code = 404, message = "Not Found", response = ExceptionType.class) })
     @GetMapping(produces = { "application/json" })
     public CharacterBDO getCharacterBDO(String id, String name, String classname, Integer level) {
+	try {
+	    Thread.sleep(40000);
+	} catch (Exception e) {
+	    e.printStackTrace();
+	}
 	CharacterBDO character = new CharacterBDO();
 	character.setId(id);
 	character.setName("Jhon");
